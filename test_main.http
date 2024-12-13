@@ -1,0 +1,35 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/posts/post
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/dogs/dog?kind=terrier
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/dogs/dog
+Accept: application/json
+
+{"name": "Tony", "pk": 42, "kind": "terrier"}
+
+###
+
+GET http://127.0.0.1:8000/dogs/dog/42
+Accept: application/json
+
+###
+
+PATCH http://127.0.0.1:8000/dogs/dog/42
+Accept: application/json
+
+{"name": "Antony", "pk": 42, "kind": "terrier"}
+
+###
