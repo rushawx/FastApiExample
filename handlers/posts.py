@@ -1,14 +1,11 @@
 import datetime
 
 from fastapi import APIRouter, Request
-from models.timestamp import Timestamp
+
 from data.db import post_db
+from models.timestamp import Timestamp
 
-
-router = APIRouter(
-    prefix="/posts",
-    tags=["posts"]
-)
+router = APIRouter(prefix="/posts", tags=["posts"])
 
 
 @router.post("/post")

@@ -2,14 +2,10 @@ from typing import List
 
 from fastapi import APIRouter, Request
 
-from models.dog import Dog
 from data.db import dogs_db
+from models.dog import Dog
 
-
-router = APIRouter(
-    prefix="/dogs",
-    tags=["dogs"]
-)
+router = APIRouter(prefix="/dogs", tags=["dogs"])
 
 
 @router.get("/dog")
@@ -29,7 +25,7 @@ async def post_dog(request: Request, dog: Dog) -> Dog:
 
 
 @router.get("/dog/{pk}")
-async def get_dog(request: Request, pk: int) -> Dog | None:
+async def get_dog_by_pk(request: Request, pk: int) -> Dog | None:
     for _, dog in dogs_db.items():
         if dog.pk == pk:
             return dog
